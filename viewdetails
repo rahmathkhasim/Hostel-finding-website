@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            padding-top: 20px;
+        }
+        .hostel-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .hostel-image-container {
+            width: 100vw; 
+            max-height: 80vh; 
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .hostel-image {
+            display: flex;
+            width: 300%; 
+            animation: slide 15s linear infinite; 
+        }
+        .hostel-image img {
+            width: 33.333%; 
+            height: 100%;
+            object-fit: contain; 
+            transition: transform 0.5s ease;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(-200%); } 
+        }
+        .hostel-info {
+            text-align: center;
+        }
+        .hostel-name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .hostel-rating {
+            color: #f39c12;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .hostel-owner {
+            margin-bottom: 20px;
+        }
+        .hostel-owner img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .hostel-owner p {
+            font-style: italic;
+        }
+        .hostel-reviews {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .star {
+            color: #f39c12;
+        }
+        .mess-timings {
+            margin-bottom: 20px;
+        }
+        .food-info-container {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            transition: transform 0.3s ease;
+            text-align: center; 
+        }
+
+        .timings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .timings-table th, .timings-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .timings-table th {
+            background-color: #f2f2f2;
+        }
+
+        .timings-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Enlarge on hover */
+        .food-info-container:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="hostel-details">
+        <div class="hostel-image-container">
+            <div class="hostel-image">
+                <img src="hostelpic.jpg" alt="Manasa Hostel Image">
+                <img src="hostelpic1.jpg" alt="Manasa Hostel Image">
+                <img src="Designer (2).png" alt="Manasa Hostel Image">
+            </div>
+        </div>
+        <div class="hostel-info">
+            <div class="hostel-name">Manasa Hostel</div>
+            <div class="hostel-rating">Rating: 4 out of 5</div>
+            <div class="hostel-reviews">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <div class="hostel-owner">
+                <img src="manasa.jpg" alt="Owner">
+                <p>"Welcome to Manasa Hostel. We strive to provide the best accommodation experience for our guests."</p>
+            </div>
+            <div class="mess-timings">
+                <h2>Mess Timings</h2>
+                <table class="timings-table">
+                    <tr>
+                        <th>Day</th>
+                        <th>Breakfast</th>
+                        <th>Lunch</th>
+                        <th>Dinner</th>
+                    </tr>
+                    <tr>
+                        <td>Monday to Friday</td>
+                        <td>7:00 AM - 9:00 AM</td>
+                        <td>12:00 PM - 2:00 PM</td>
+                        <td>7:00 PM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>8:00 AM - 10:00 AM</td>
+                        <td>12:30 PM - 2:30 PM</td>
+                        <td>6:30 PM - 8:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>8:30 AM - 10:30 AM</td>
+                        <td>1:00 PM - 3:00 PM</td>
+                        <td>6:00 PM - 8:00 PM</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="food-info-container">
+                <h2>Food Information</h2>
+                <p>Monday: South Indian Breakfast, North Indian Lunch, Chinese Dinner</p>
+                <p>Tuesday: Continental Breakfast, South Indian Lunch, Italian Dinner</p>
+                <p>Wednesday: North Indian Breakfast, Chinese Lunch, Continental Dinner</p>
+                <p>Thursday: Italian Breakfast, North Indian Lunch, South Indian Dinner</p>
+                <p>Friday: Chinese Breakfast, Italian Lunch, North Indian Dinner</p>
+                <p>Saturday: South Indian Breakfast, Continental Lunch, Chinese Dinner</p>
+                <p>Sunday: North Indian Breakfast, Italian Lunch, South Indian Dinner</p>
+            </div>
+            <div class="hostel-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet quam nec enim aliquet, at pharetra orci elementum. Nulla scelerisque est sit amet quam convallis, nec viverra nulla cursus.</p>
+                <p>Quisque tincidunt semper nisi, ut rutrum nulla aliquam et. Fusce ultrices sapien vitae nunc maximus, non posuere justo volutpat.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
