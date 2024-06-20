@@ -30,7 +30,7 @@
         .hostel-image {
             display: flex;
             width: 300%; 
-            animation: slide 15s linear infinite; 
+            animation: slide 20s linear infinite; /* Adjusted animation duration */
         }
         .hostel-image img {
             width: 33.333%; 
@@ -40,7 +40,7 @@
         }
         @keyframes slide {
             0% { transform: translateX(0); } 
-            100% { transform: translateX(-200%); } 
+            100% { transform: translateX(-100%); } /* Changed to -100% to attach the first photo at the end */
         }
         .hostel-info {
             text-align: center;
@@ -175,10 +175,12 @@
                 <p>Saturday: South Indian Breakfast, Continental Lunch, Chinese Dinner</p>
                 <p>Sunday: North Indian Breakfast, Italian Lunch, South Indian Dinner</p>
             </div>
-            <div class="hostel-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet quam nec enim aliquet, at pharetra orci elementum. Nulla scelerisque est sit amet quam convallis, nec viverra nulla cursus.</p>
-                <p>Quisque tincidunt semper nisi, ut rutrum nulla aliquam et. Fusce ultrices sapien vitae nunc maximus, non posuere justo volutpat.</p>
-            </div>
+            <h2>Student Reviews</h2>
+                <div>
+                    <p><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9734;</span> - "Great facilities, but could improve cleanliness."</p>
+                    <p><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> - "Excellent environment and food quality."</p>
+                    <p><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> - "Very comfortable stay and friendly staff."</p>
+                </div>
         </div>
     </div>
 </body>
