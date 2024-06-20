@@ -1,17 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: white;
+            padding-top: 70px;
+        }
+        .navbar {
+            background-color: white;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid rgb(3, 4, 3);
+            position: fixed; 
+            top: 0;
+            width: 100%; 
+            z-index: 1000; 
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: background-color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-family: ui-sans-serif, "Apple Color Emoji", sans-serif;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        .search-box {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .search-input {
+            padding: 5px 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            transition: width 0.3s ease;
+        }
+        .search-input:focus {
+            width: 300px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+        }
+        .profile-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .hostel-details {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            transform: scale(1);
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            background-color: #e2e8f0;
+            color: black;
+        }
+        .hostel-details:hover {
+            transform: scale(1.02);
+        }
+        .hostel-image-slider {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .hostel-image {
+            display: none;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease;
+            position: relative;
+        }
+        .hostel-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+        .hostel-info {
+            flex: 1;
+            padding-left: 20px;
+            font-size: 16px;
+            text-align: right;
+            position: relative;
+            transition: transform 0.3s ease, left 0.3s ease;
+            transform: scale(1);
+            left: 0;
+            white-space: nowrap;
+        }
+        .hostel-info:hover {
+            transform: scale(1.01);
+            left: -20px;
+        }
+        .hostel-name {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .hostel-rating {
+            color: #f39c12;
+            margin-top: 10px;
+        }
+        .view-details {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .view-button,
+        .navbar a {
+            background-color: #2563eb; 
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .view-button:hover,
+        .navbar a:hover {
+            background-color: #2980b9;
+        }
+        .navbar a:first-child {
+            margin-left: 5%; 
+        }
+        .navbar a:last-child {
+            margin-right: 3%; 
+        }
+    </style>
 </head>
 <body>
-  <div class="dashboard-container">
-    <h1>Welcome to Your Dashboard</h1>
-    <div id="user-info"></div>
-  </div>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search for hostels">
+            <img src="search.png" alt="Search" class="search-icon">
+        </div>
+        <a href="#">Filters</a>
+        <a href="#">
+            <img src="user.png" alt="Profile" class="profile-icon"> Profile
+        </a>
+    </div>
+    <div class="hostel-details" id="manasa" onmouseenter="startSlide('manasa')" onmouseleave="stopSlide()">
+        <div class="hostel-image-slider">
+            <div class="hostel-image">
+                <img src="manasa.jpg" alt="Manasa Hostel Image">
+            </div>
+            <div class="hostel-image">
+                <img src="dhruv.jpg" alt="Dhruv Hostel Image">
+            </div>
+        </div>
+        <div class="hostel-info">
+            <div class="hostel-name">Manasa Hostel</div>
+            <div>Owner: Rambabu</div>
+            <div class="hostel-rating">Rating: 4 out of 5</div>
+            <div>Monthly Fee: $7000</div>
+            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
+        </div>
+    </div>
 
-  <script src="firebase.js"></script>
+
+    <div class="hostel-details" id="dhruv" onmouseenter="startSlide('dhruv')" onmouseleave="stopSlide()">
+        <div class="hostel-image-slider">
+            <div class="hostel-image">
+                <img src="dhruv1.jpg" alt="Manasa Hostel Image">
+            </div>
+            <div class="hostel-image">
+                <img src="dhurv2.jpg" alt="Dhruv Hostel Image">
+            </div>
+        </div>
+        <div class="hostel-info">
+            <div class="hostel-name">Dhruv Hostel</div>
+            <div>Owner: Somesh</div>
+            <div class="hostel-rating">Rating: 3 out of 5</div>
+            <div>Monthly Fee: $6500</div>
+            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
+        </div>
+    </div>
+
+  
+    <div class="hostel-details" id="random1" onmouseenter="startSlide('random1')" onmouseleave="stopSlide()">
+        <div class="hostel-image-slider">
+            <div class="hostel-image">
+                <img src="random1_1.jpg" alt="Random1 Hostel Image">
+            </div>
+            <div class="hostel-image">
+                <img src="random1_2.jpg" alt="Random1 Hostel Image">
+            </div>
+        </div>
+        <div class="hostel-info">
+            <div class="hostel-name">Aditya Hostel</div>
+            <div>Owner: Ram</div>
+            <div class="hostel-rating">Rating: 4.5 out of 5</div>
+            <div>Monthly Fee: $7200</div>
+            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
+        </div>
+    </div>
+
+    <div class="hostel-details" id="random2" onmouseenter="startSlide('random2')" onmouseleave="stopSlide()">
+        <div class="hostel-image-slider">
+            <div class="hostel-image">
+                <img src="random2_1.jpg" alt="Random2 Hostel Image">
+            </div>
+            <div class="hostel-image">
+                <img src="random2_2.jpg" alt="Random2 Hostel Image">
+            </div>
+        </div>
+        <div class="hostel-info">
+            <div class="hostel-name">Bheema Hostel</div>
+            <div>Owner: Nithin</div>
+            <div class="hostel-rating">Rating: 3.8 out of 5</div>
+            <div>Monthly Fee: $6000</div>
+            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
+        </div>
+    </div>
+
+    <script>
+        let slideInterval;
+
+        function startSlide(hostelId) {
+            slideInterval = setInterval(() => {
+                nextImage(hostelId);
+            }, 2000);
+        }
+
+        function stopSlide() {
+            clearInterval(slideInterval);
+        }
+
+        function showImage(index, hostelId) {
+            const hostel = document.getElementById(hostelId);
+            const images = hostel.querySelectorAll('.hostel-image');
+            const totalImages = images.length;
+            let currentIndex = index;
+
+            if (index >= totalImages) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalImages - 1;
+            }
+
+            images.forEach((imgContainer, i) => {
+                if (i === currentIndex) {
+                    imgContainer.style.display = 'block';
+                    imgContainer.style.opacity = 1;
+                } else {
+                    imgContainer.style.display = 'none';
+                }
+            });
+        }
+
+        function nextImage(hostelId) {
+            const hostel = document.getElementById(hostelId);
+            const images = hostel.querySelectorAll('.hostel-image');
+            let currentIndex = 0;
+
+            images.forEach((imgContainer, i) => {
+                if (imgContainer.style.display === 'block') {
+                    currentIndex = i;
+                }
+            });
+
+            showImage(currentIndex + 1, hostelId);
+        }
+
+        function prevImage(hostelId) {
+            const hostel = document.getElementById(hostelId);
+            const images = hostel.querySelectorAll('.hostel-image');
+            let currentIndex = 0;
+
+            images.forEach((imgContainer, i) => {
+                if (imgContainer.style.display === 'block') {
+                    currentIndex = i;
+                }
+            });
+
+            showImage(currentIndex - 1, hostelId);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showImage(0, 'manasa');
+            showImage(0, 'dhruv');
+            showImage(0, 'random1');
+            showImage(0, 'random2');
+        });
+    </script>
 </body>
 </html>
