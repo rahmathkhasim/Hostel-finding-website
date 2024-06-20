@@ -83,6 +83,7 @@
             margin-right: 5%;
             background-color: #e2e8f0;
             color: black;
+            cursor: pointer;
         }
         .hostel-details:hover {
             transform: scale(1.02);
@@ -124,10 +125,12 @@
             font-weight: bold;
             font-size: 24px;
             margin-bottom: 10px;
+            text-decoration: none;
         }
         .hostel-rating {
             color: #f39c12;
             margin-top: 10px;
+            text-decoration: none;
         }
         .view-details {
             margin-top: 20px;
@@ -166,79 +169,90 @@
             <img src="user.png" alt="Profile" class="profile-icon"> Profile
         </a>
     </div>
-    <div class="hostel-details" id="manasa" onmouseenter="startSlide('manasa')" onmouseleave="stopSlide()">
-        <div class="hostel-image-slider">
-            <div class="hostel-image">
-                <img src="manasa.jpg" alt="Manasa Hostel Image">
-            </div>
-            <div class="hostel-image">
-                <img src="dhruv.jpg" alt="Dhruv Hostel Image">
-            </div>
-        </div>
-        <div class="hostel-info">
-            <div class="hostel-name">Manasa Hostel</div>
-            <div>Owner: Rambabu</div>
-            <div class="hostel-rating">Rating: 4 out of 5</div>
-            <div>Monthly Fee: $7000</div>
-            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
-        </div>
-    </div>
 
+    <!-- Manasa Hostel -->
+    <a href="viewdetails.html" style="text-decoration: none;">
+        <div class="hostel-details" id="manasa" onmouseenter="startSlide('manasa')" onmouseleave="stopSlide()">
+            <div class="hostel-image-slider">
+                <div class="hostel-image">
+                    <img src="manasa.jpg" alt="Manasa Hostel Image">
+                </div>
+                <div class="hostel-image">
+                    <img src="dhruv.jpg" alt="Dhruv Hostel Image">
+                </div>
+            </div>
+            <div class="hostel-info">
+                <div class="hostel-name">Manasa Hostel</div>
+                <div>Owner: Rambabu</div>
+                <div class="hostel-rating">Rating: 4 out of 5</div>
+                <div>Monthly Fee: $7000</div>
+                <div class="view-details"><button class="view-button">View Details</button></div>
+            </div>
+        </div>
+    </a>
 
-    <div class="hostel-details" id="dhruv" onmouseenter="startSlide('dhruv')" onmouseleave="stopSlide()">
-        <div class="hostel-image-slider">
-            <div class="hostel-image">
-                <img src="dhruv1.jpg" alt="Manasa Hostel Image">
+    <!-- Dhruv Hostel -->
+    <a href="viewdetails.html" style="text-decoration: none;">
+        <div class="hostel-details" id="dhruv" onmouseenter="startSlide('dhruv')" onmouseleave="stopSlide()">
+            <div class="hostel-image-slider">
+                <div class="hostel-image">
+                    <img src="dhruv1.jpg" alt="Manasa Hostel Image">
+                </div>
+                <div class="hostel-image">
+                    <img src="dhurv2.jpg" alt="Dhruv Hostel Image">
+                </div>
             </div>
-            <div class="hostel-image">
-                <img src="dhurv2.jpg" alt="Dhruv Hostel Image">
+            <div class="hostel-info">
+                <div class="hostel-name">Dhruv Hostel</div>
+                <div>Owner: Somesh</div>
+                <div class="hostel-rating">Rating: 3 out of 5</div>
+                <div>Monthly Fee: $6500</div>
+                <div class="view-details"><button class="view-button">View Details</button></div>
             </div>
         </div>
-        <div class="hostel-info">
-            <div class="hostel-name">Dhruv Hostel</div>
-            <div>Owner: Somesh</div>
-            <div class="hostel-rating">Rating: 3 out of 5</div>
-            <div>Monthly Fee: $6500</div>
-            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
-        </div>
-    </div>
+    </a>
 
-  
-    <div class="hostel-details" id="random1" onmouseenter="startSlide('random1')" onmouseleave="stopSlide()">
-        <div class="hostel-image-slider">
-            <div class="hostel-image">
-                <img src="random1_1.jpg" alt="Random1 Hostel Image">
+    <!-- Random1 Hostel -->
+    <a href="viewdetails.html" style="text-decoration: none;">
+        <div class="hostel-details" id="random1" onmouseenter="startSlide('random1')" onmouseleave="stopSlide()">
+            <div class="hostel-image-slider">
+                <div class="hostel-image">
+                    <img src="random1_1.jpg" alt="Random1 Hostel Image">
+                </div>
+                <div class="hostel-image">
+                    <img src="random1_2.jpg" alt="Random1 Hostel Image">
+                </div>
             </div>
-            <div class="hostel-image">
-                <img src="random1_2.jpg" alt="Random1 Hostel Image">
+            <div class="hostel-info">
+                <div class="hostel-name">Aditya Hostel</div>
+                <div>Owner: Ram</div>
+                <div class="hostel-rating">Rating: 4.5 out of 5</div>
+                <div>Monthly Fee: $7200</div>
+                <div class="view-details"><button class="view-button">View Details</button></div>
             </div>
         </div>
-        <div class="hostel-info">
-            <div class="hostel-name">Aditya Hostel</div>
-            <div>Owner: Ram</div>
-            <div class="hostel-rating">Rating: 4.5 out of 5</div>
-            <div>Monthly Fee: $7200</div>
-            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
-        </div>
-    </div>
+    </a>
 
-    <div class="hostel-details" id="random2" onmouseenter="startSlide('random2')" onmouseleave="stopSlide()">
-        <div class="hostel-image-slider">
-            <div class="hostel-image">
-                <img src="random2_1.jpg" alt="Random2 Hostel Image">
+    <!-- Random2 Hostel -->
+    <a href="viewdetails.html" style="text-decoration: none;">
+        <div class="hostel-details" id="random2" onmouseenter="startSlide('random2')" onmouseleave="stopSlide()">
+            <div class="hostel-image-slider">
+                <div class="hostel-image">
+                    <img src="random2_1.jpg" alt="Random2 Hostel Image">
+                </div>
+                <div class="hostel-image">
+                    <img src="random2_2.jpg" alt="Random2 Hostel Image">
+                </div>
             </div>
-            <div class="hostel-image">
-                <img src="random2_2.jpg" alt="Random2 Hostel Image">
+            <div class="hostel-info">
+                <div class="hostel-name">Bheema Hostel</div>
+                <div>Owner: Nithin</div>
+                <div class="hostel-rating">Rating: 3.8 out of 5</div>
+                <div>Monthly Fee: $6000</div>
+                <div class="view-details"><button class="view-button">View Details</button></div>
             </div>
         </div>
-        <div class="hostel-info">
-            <div class="hostel-name">Bheema Hostel</div>
-            <div>Owner: Nithin</div>
-            <div class="hostel-rating">Rating: 3.8 out of 5</div>
-            <div>Monthly Fee: $6000</div>
-            <div class="view-details"><button class="view-button" onclick="window.location.href='viewdetails.html'">View Details</button></div>
-        </div>
-    </div>
+    </a>
 
     <script>
         let slideInterval;
